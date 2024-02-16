@@ -1,13 +1,10 @@
-export default function Options({ updateFeedback, total, setStatus }) {
-  function resetValue() {
-    setStatus({ good: 0, neutral: 0, bad: 0 });
-  }
+export default function Options({ updateFeedback, total, reset }) {
   return (
     <div>
       <button onClick={() => updateFeedback("good")}>Good</button>
       <button onClick={() => updateFeedback("neutral")}>Neutral</button>
       <button onClick={() => updateFeedback("bad")}>Bad</button>
-      {total > 0 && <button onClick={resetValue}>Reset</button>}
+      {total > 0 && <button onClick={reset}>Reset</button>}
     </div>
   );
 }
